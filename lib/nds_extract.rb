@@ -25,8 +25,15 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
-end
+  names=[]
+ i=0
+  while i < source.length 
+    n= source[i][:name]
+    i += 1
+    names << n
+  end
+  names
+  end
 
 def total_gross(source)
   # Write this implementation
@@ -36,8 +43,23 @@ def total_gross(source)
   # 2. list_of_directors: names provides an Array of directors names (use
   #
   # Visit each key (i.e. director name), look up the value in the hash
-  # returned by directors_totals, and add it to a running total. When done,
+  # returned by directors_totals, and add it to a running total. When done, 
   # return the total
-end
+
+    
+ total=0 
+ n=0 
+ while n < list_of_directors(source).length 
+i= list_of_directors(source)[n]
+total += directors_totals(source)[i]
+n += 1
+    end
+    total
+
+  end
+## i=directors_totals(source)
+#i.values.sum why do i have to use list names if i just have to add all of the values of the hash 
+
+
 
 
